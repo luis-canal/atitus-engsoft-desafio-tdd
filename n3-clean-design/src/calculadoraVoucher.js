@@ -1,5 +1,8 @@
 export function calcularDesconto(codigo, valor) {
-  // 🚀 Implemente aqui via TDD
+  if (codigo === 'NATAL10') {
+    return valor * 0.10;
+  }
+
   return 0;
 }
 

@@ -1,6 +1,11 @@
+import { validarEmail } from './validadores/validarEmail.js';
+import { validarSenha } from './validadores/validarSenha.js';
+import { validarIdade } from './validadores/validarIdade.js';
+
 export function validadorUsuario(usuario) {
-  if (!usuario.email.includes('@')) return false;
-  if (usuario.password.length < 8) return false;
-  if (usuario.age < 18) return false;
-  return true;
+  return (
+    validarEmail(usuario) && 
+    validarSenha(usuario) && 
+    validarIdade(usuario)
+  );
 }

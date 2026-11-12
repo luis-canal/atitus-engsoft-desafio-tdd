@@ -1,12 +1,6 @@
 export class ServicoNotificacao {
-  constructor() {
-    // ❌ Acoplamento Forte: A classe instancia sua própria dependência (Simulação)
-    this.gatewayEmail = {
-      enviar: async (email, mensagem) => {
-        console.log(`[REAL] Enviando e-mail para ${email}: ${mensagem}`);
-        return true;
-      }
-    };
+  constructor(gatewayEmail) {
+    this.gatewayEmail = gatewayEmail;
   }
 
   async enviarBoasVindas(usuario) {

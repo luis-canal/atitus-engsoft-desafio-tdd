@@ -1,8 +1,10 @@
-export function calcularDesconto(codigo, valor) {
-  if (codigo === 'NATAL10') {
-    return valor * 0.10;
-  }
+const descontos = {
+  DEZ: 0.1,
+  TRINTA: 0.3,
+};
 
-  return 0;
+export function calcularDesconto(codigo, valor) {
+  const percentual = descontos[codigo] ?? 0;
+  return valor * percentual;
 }
 
